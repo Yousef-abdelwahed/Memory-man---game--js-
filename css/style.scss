@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container_info{
+    width: 1080px;
+    .name{
+        float: left;
+    }
+    .tries{
+        float: right;
+    }
+};
+.memoryImagesBlocks{
+    width: 1100px;
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     margin: 20px auto;
+     overflow: hidden;
+
+    // flex: wrap;
+    background-color: black;
+    .gameBlock{
+        position: relative;
+        height: 200px;
+        // flex: 1 0 200;
+        transition: transform .5s;
+        cursor: pointer;
+    }
+     .font{
+
+    }
+     .back{
+        img{
+            max-width: 140px;
+            max-height: 140px;
+        }
+        
+    }
+}
