@@ -5,34 +5,122 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background: url("https://www.memozor.com/templates/memoire/images/background_new.jpg");
+}
+
+.memoZor {
+  width: 400px;
+  height: 130px;
+  background: url("https://www.memozor.com/templates/memoire/images/logo_memozor_memory_games_online_free.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #3f04ab;
+  border-radius: 4%;
+  box-shadow: 23px -1px 300px 60px rgba(0, 0, 0, 0.97);
+  margin: 0px 10%;
+}
+
+.game {
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 1%;
+  overflow: hidden;
+  position: relative;
+}
+.game .splash_screen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(63, 4, 171, 0.2588235294);
+  z-index: 2;
+}
+.game .splash_screen .startBtn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 70px;
+  border: 2px solid #fff;
+  border-radius: 2%;
+  cursor: pointer;
+  font: 28px bolder;
+  color: #fff;
+  background-color: #011b36;
+  transform: translate(-50%, -50%);
+}
+.game .splash_screen .startBtn:hover {
+  background-color: #074588;
+}
+
+.header_text {
+  margin: 20px 20px 0;
+  width: auto;
 }
 
 .container_info {
-  width: 1080px;
+  width: 65%;
+  margin: 20px auto 0px;
+  font-size: 24px;
+  padding: 10px;
+  border: 2px solid #6ce9f8;
+  transition: 0.5s;
+  overflow: hidden;
+  background-color: rgb(200, 192, 192);
 }
 .container_info .name {
   float: left;
 }
 .container_info .tries {
   float: right;
+  left: 20px;
 }
 
 .memoryImagesBlocks {
-  width: 1100px;
+  width: 750px;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  margin: 20px auto;
+  margin: 5px auto;
   overflow: hidden;
-  background-color: black;
+  transition-property: box-shadow;
+  transition-duration: 0.5s;
+}
+.memoryImagesBlocks:hover {
+  box-shadow: 5px -10px rgba(192, 192, 192, 0.4549019608);
 }
 .memoryImagesBlocks .gameBlock {
   position: relative;
-  height: 200px;
+  height: 130px;
+  flex: 1 0 130px;
+  margin: 3px 5px 5px;
+  background-color: #1a79a9;
   transition: transform 0.5s;
+  transform-style: preserve-3d;
   cursor: pointer;
 }
+.memoryImagesBlocks .gameBlock .isFlip {
+  transform: rotateY("180deg");
+  -moz-transform: rotateY("180deg");
+  -webkit-transform: rotateY("180deg");
+}
+.memoryImagesBlocks .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  padding: 20px;
+  box-shadow: #2196f3 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.memoryImagesBlocks .front {
+  background: url("https://www.memozor.com/jeux/new_games/memory_choose_cards/designs/purple/card.png?v=8");
+  line-height: 200px;
+}
+.memoryImagesBlocks .back {
+  background-color: #333;
+  transform: rotateY(180deg);
+}
 .memoryImagesBlocks .back img {
-  max-width: 140px;
-  max-height: 140px;
+  width: 80px;
+  height: 80px;
 }/*# sourceMappingURL=style.css.map */
