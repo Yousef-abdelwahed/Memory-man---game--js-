@@ -75,6 +75,12 @@ body {
   left: 20px;
 }
 
+.noClicking {
+  pointer-events: none;
+  background-color: #011b36;
+  transition: all 0.1s;
+}
+
 .memoryImagesBlocks {
   width: 750px;
   display: flex;
@@ -96,6 +102,12 @@ body {
   transition: transform 0.5s;
   transform-style: preserve-3d;
   cursor: pointer;
+}
+.memoryImagesBlocks .hasMatches {
+  transform: rotateY(180deg);
+}
+.memoryImagesBlocks .isFlip {
+  transform: rotateY(180deg);
 }
 .memoryImagesBlocks .face {
   position: absolute;
