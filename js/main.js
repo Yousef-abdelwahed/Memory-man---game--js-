@@ -48,8 +48,7 @@ function flipBlock(selectBlock){
     // selectBlock.classList.add("flip");
     // selectBlock.style.height ="200px";
     selectBlock.style.transform ="rotateY(180deg)"; 
-    console.log(selectBlock);
-    getIndexKeys()
+
 }
 
 function shufflingCards(arr){
