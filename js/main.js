@@ -24,17 +24,32 @@ function  setUserName()
 //add order property to images 
 function main(){
     getIndexKeys();
+
 }
+var duration =1000;
+var blackContainer= document.querySelector(".memoryImagesBlocks")
+var blocks = Array.from(blackContainer.children);
 
 function getIndexKeys(){
-    const duration =1000;
-    const blackContainer= document.querySelector(".memoryImagesBlocks")
-    const blocks = Array.from(blackContainer.children);
-    const orderRang=[...Array(blocks.length).keys()]
-        blocks.forEach((blocks,indexe)=>{
-        blocks.style.order= orderRang[indexe]
+       const orderRang=[...Array(blocks.length).keys()];
+    //****** select all component separated
+        blocks.forEach((block,indexe)=>{
+        block.style.order= orderRang[indexe];
+        block.addEventListener('click',()=>{
+            flipBlock(block);
+        });
+
     });
     shufflingCards(orderRang);
+};
+//*****************flip function */
+function flipBlock(selectBlock){
+    // add flip class
+    selectBlock.classList.add("flip");
+    // selectBlock.style.height ="200px";
+    selectBlock.style.transform="red"; 
+    console.log(selectBlock);
+    getIndexKeys()
 }
 
 function shufflingCards(arr){
@@ -51,6 +66,6 @@ function shufflingCards(arr){
         //[3]random = current 
         arr[random]=box;
     }
-    return arr }
+    return arr };
 
 
