@@ -76,6 +76,11 @@ body{
     }
    
 };
+.noClicking{
+    pointer-events: none;
+    background-color: #011b36;
+    transition: all .1s;
+}
 .memoryImagesBlocks{
     width: 750px;
      display: flex;
@@ -84,6 +89,8 @@ body{
      overflow: hidden;
     transition-property: box-shadow ;
     transition-duration: .5s;
+    
+   
     &:hover{
         // margin: 20px auto;
         box-shadow: 5px -10px #c0c0c074;
@@ -104,6 +111,14 @@ body{
         transform-style: preserve-3d;
         cursor: pointer;
         
+      
+    }
+   
+    .hasMatches{
+        transform: rotateY(180deg);
+    }
+    .isFlip{
+        transform: rotateY(180deg);
     }
     .face{
         position:absolute;
@@ -130,8 +145,9 @@ body{
         img{
             width: 80px;
             height: 80px;
-            
             // margin: 10px 26px;
+            
         }
+       
         }
     }
