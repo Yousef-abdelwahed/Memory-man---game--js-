@@ -45,7 +45,7 @@ function getIndexKeys(){
 //*****************flip function */
 function flipBlock(selectBlock){
     // add flip class
-    selectBlock.classList.add("flip");
+    // selectBlock.classList.add("flip");
     // selectBlock.style.height ="200px";
     selectBlock.style.transform ="rotateY(180deg)"; 
     console.log(selectBlock);
