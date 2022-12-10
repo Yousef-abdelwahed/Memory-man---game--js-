@@ -97,11 +97,6 @@ body {
   transform-style: preserve-3d;
   cursor: pointer;
 }
-.memoryImagesBlocks .gameBlock .flip {
-  transform: rotateY("180deg") !important;
-  -moz-transform: rotateY("180deg");
-  -webkit-transform: rotateY("180deg");
-}
 .memoryImagesBlocks .face {
   position: absolute;
   width: 100%;
