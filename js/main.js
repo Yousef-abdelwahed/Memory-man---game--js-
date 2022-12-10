@@ -32,32 +32,21 @@ var blocks = Array.from(blackContainer.children);
 
 function getIndexKeys(){
        const orderRang=[...Array(blocks.length).keys()];
+       shufflingCards(orderRang);
     //****** select all component separated
         blocks.forEach((block,indexe)=>{
         block.style.order= orderRang[indexe];
         block.addEventListener('click',()=>{
             flipBlock(block);
         });
-
     });
-    shufflingCards(orderRang);
 };
-//*****************flip function */
-function flipBlock(selectBlock){
-    // add flip class
-    // selectBlock.classList.add("flip");
-    // selectBlock.style.height ="200px";
-    selectBlock.style.transform ="rotateY(180deg)"; 
-
-}
-
 function shufflingCards(arr){
     let current = arr.length,random,box;
     while(current>0){
         //get random numbers
      let random = Math.floor(Math.random()*current)
         current--;
-        console.log(random)
         //[1] set current in box
         box=arr[current];
         //[2]currant = random
@@ -66,5 +55,53 @@ function shufflingCards(arr){
         arr[random]=box;
     }
     return arr };
+
+//*****************flip function */
+function flipBlock(selectBlock){
+
+    selectBlock.classList.add("isFlip");
+    // selectBlock.style.height ="200px";
+    // *********add flip class**************
+    // selectBlock.style.transform ="rotateY(180deg)"; 
+    let getAllfilpsCards= blocks.filter(flippedBlock =>flippedBlock.classList.contains("isFlip"))
+    if(getAllfilpsCards.length == 2){
+       
+        stopClicking(selectBlock);
+        console.log(getAllfilpsCards.length)
+        //chech matched cards 
+        checkMatchedBlock(getAllfilpsCards[0],getAllfilpsCards[1]);
+    }
+}
+// *****************check matched cards  */
+    function checkMatchedBlock(firstBlock, secondBlock){
+        if(firstBlock.dataset.tach === secondBlock.dataset.tach){
+            firstBlock.classList.remove("isFlip");
+            secondBlock.classList.remove("isFlip");
+            firstBlock.classList.add("hasMatches");
+            secondBlock.classList.add("hasMatches");
+
+            firstBlock.children.item(1).style.opacity=".2";
+            secondBlock.children.item(1).style.opacity=".2"
+     
+        }else{
+          console.log()
+            setTimeout(()=>{
+                firstBlock.classList.remove("isFlip");
+                secondBlock.classList.remove("isFlip");
+            },duration)
+        }
+
+    }
+//*****************stop clicking when two cards flips  */
+function stopClicking(selectBlock){
+    blackContainer.classList.add("noClicking");
+    blackContainer.style.pointerEvents ="none";
+    
+    setTimeout(()=>{
+        blackContainer.style.removeProperty("pointer-events")
+        blackContainer.classList.remove("noClicking");
+        // selectBlock.style.removeProperty("transform");
+    },duration)
+}
 
 
