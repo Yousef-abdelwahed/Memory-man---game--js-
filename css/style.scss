@@ -88,6 +88,11 @@ body{
         // margin: 20px auto;
         box-shadow: 5px -10px #c0c0c074;
     }
+    // .flip{
+    //     transform: rotateY('180deg') !important;
+    // //    -moz-transform: rotateY('180deg');
+    // //     -webkit-transform:rotateY('180deg') ;
+    // }
     .gameBlock{
         // width: 20%;
         position: relative;
@@ -98,11 +103,7 @@ body{
         transition: transform .5s;
         transform-style: preserve-3d;
         cursor: pointer;
-         .flip{
-            transform: rotateY('180deg') !important;
-           -moz-transform: rotateY('180deg');
-            -webkit-transform:rotateY('180deg') ;
-        }
+        
     }
     .face{
         position:absolute;
