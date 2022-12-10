@@ -47,7 +47,7 @@ function flipBlock(selectBlock){
     // add flip class
     selectBlock.classList.add("flip");
     // selectBlock.style.height ="200px";
-    selectBlock.style.transform="red"; 
+    selectBlock.style.transform ="rotateY(180deg)"; 
     console.log(selectBlock);
     getIndexKeys()
 }
