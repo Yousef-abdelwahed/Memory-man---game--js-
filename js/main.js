@@ -67,13 +67,14 @@ function flipBlock(selectBlock){
     if(getAllfilpsCards.length == 2){
        
         stopClicking(selectBlock);
-        console.log(getAllfilpsCards.length)
         //chech matched cards 
         checkMatchedBlock(getAllfilpsCards[0],getAllfilpsCards[1]);
     }
 }
 // *****************check matched cards  */
     function checkMatchedBlock(firstBlock, secondBlock){
+        let tryElement = document.querySelector(".tries span");
+
         if(firstBlock.dataset.tach === secondBlock.dataset.tach){
             firstBlock.classList.remove("isFlip");
             secondBlock.classList.remove("isFlip");
@@ -84,7 +85,7 @@ function flipBlock(selectBlock){
             secondBlock.children.item(1).style.opacity=".2"
      
         }else{
-          console.log()
+            tryElement.innerHTML= parseInt(tryElement.innerHTML)+1;
             setTimeout(()=>{
                 firstBlock.classList.remove("isFlip");
                 secondBlock.classList.remove("isFlip");
